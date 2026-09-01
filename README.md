@@ -1,6 +1,6 @@
 # anleon-getty
 
-<img width="1183" height="552" alt="colorvue getty submission" src="https://github.com/user-attachments/assets/d208cb0f-6d2f-4282-9ec3-f57b8fe27760" />
+<img width="532" height="769" alt="color-vue" src="https://github.com/user-attachments/assets/a5e94b5a-c6bd-41ae-98a8-3238f5541776" />
 
 ## Brief
 
