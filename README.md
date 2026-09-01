@@ -5,10 +5,9 @@
 ## Brief
 
 Using Linked Data representation field to display the dominant color and swatch palette of an image.
-Uses [colorThief](https://lokeshdhakar.com/projects/color-thief/) to grab colors from any image (even video!) 
+Uses [colorThief](https://lokeshdhakar.com/projects/color-thief/) to grab colors from any image.
 
 LinkeData URL: https://data.getty.edu/museum/collection/object/c88b3df0-de91-4f5b-a9ef-7b2b9a6d8abb
-Representation Id: https://media.getty.edu/iiif/image/8c255d80-7382-46db-9fa8-892c0d37247e/full/full/0/default.jpg
 
 ## Stack
 - vue
@@ -18,5 +17,7 @@ Representation Id: https://media.getty.edu/iiif/image/8c255d80-7382-46db-9fa8-89
 - `npm i` to install dependencies.
 - `npm run dev` to run project.
 
-## How to use.
-Simply provide your own external image url in text field. 
+## Notes
+Inspiration for this sample project came from the Art Institute of Chicago and The Harvard Museum of Art. Their response objects include dominant color and swatch palette colors respectively. I believe including this extra bit of information would help add another layer to manifests or objects that some might appreciate. A use case I can think of is setting the `background-color` to the image dominant color for added styling.
+
+Given ample time, I would build the color thieving library in house to minimize 3rd party libraries. It seems to be a solved problem at this point.

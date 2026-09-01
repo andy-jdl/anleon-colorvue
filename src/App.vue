@@ -3,8 +3,23 @@
   import { getColorSync, getPaletteSync } from 'colorthief';
 
   const url = ref('');
+  const img = ref('');
   const dominantColor = ref('');
   const colorPalette = ref([]);
+
+  async function extractRepresentation() {
+    if(!url.value) return;
+
+    try {
+      const data = await fetch(url.value);
+      if(!data.ok) throw new Error(`Response error: ${data.status}`);
+
+      const json = await data.json();
+      img.value = json?.representation?.at(0)?.id || '';
+    } catch (err) {
+      console.error(`Failed to fetch data: ${err.message}`); 
+    }
+  }
 
   function extractColors(event) {
     try { 
@@ -21,12 +36,13 @@
 
 <template>
     <div class="imageContainer">
-      <img :src="url" class="userImage" crossorigin="anonymous" @load="extractColors($event)">
+      <img :src="img" class="userImage" crossorigin="anonymous" @load="extractColors($event)">
     </div>
     <br />
     <div class="userInput">
-      <label>Image Url</label>
-      <input v-model="url" placeholder="Image URL.." />
+      <label>LinkedData Url</label>
+      <input v-model="url" placeholder="URL.."/>
+      <button @click="extractRepresentation">Submit</button>
     </div>
 
 
